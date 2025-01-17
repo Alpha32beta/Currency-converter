@@ -26,12 +26,20 @@
     });
   
   function populateDatalist(conversionRates, datalist) {
-    datalist.innerHTML = '';
-    for (let currency in conversionRates) {
-      const option = document.createElement('option');
-      option.value = currency;
-      datalist.appendChild(option);
+    try{
+      datalist.innerHTML = '';
+      for (let currency in conversionRates) {
+        const option = document.createElement('option');
+        option.value = currency;
+        datalist.appendChild(option);
+      }
     }
+     
+    catch (err) {
+      console.error('error in option', err)
+    }
+    
+    
   }
   
   function updateConversionResult() {
@@ -41,14 +49,22 @@
     fetch(url)
       .then((response) => response.json())
       .then((response) => {
-        if (fromCurrency && toCurrency && response.conversion_rates) {
-          const rateFrom = response.conversion_rates[fromCurrency];
-          const rateTo = response.conversion_rates[toCurrency];
-          const conversionRate = (rateTo / rateFrom).toFixed(2);
-          currencyInput.value = conversionRate;
-        } else {
-          currencyInput.value = '';
+        try{
+          if (fromCurrency && toCurrency && response.conversion_rates) {
+            const rateFrom = response.conversion_rates[fromCurrency];
+            const rateTo = response.conversion_rates[toCurrency];
+            const conversionRate = (rateTo / rateFrom).toFixed(2);
+            currencyInput.value = conversionRate;
+          } else {
+            currencyInput.value = '';
+          }
         }
+
+        catch (err){
+          console.error(err)
+        }
+       
       });
+
   }
   
