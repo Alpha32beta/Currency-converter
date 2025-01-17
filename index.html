@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <h1>Currency Converter</h1>
+
+        <section id="Currency-exchange">
+    
+            <label for="currency-pair">From</label>
+            <input list="currency-list" id="currency-pair" placeholder="Search by code, e.g., USD">
+            <datalist id="currency-list"></datalist>
+    
+            <label for="currency-pair2">To</label>
+            <input list="currency-list2" id="currency-pair2" placeholder="Search by code, e.g., USD">
+            <datalist id="currency-list2"></datalist>
+    
+            <label for="currency-rate"></label>
+            <input id="currency-rate" step="0.01" placeholder="Result" readonly>
+    
+        </section>
+</body>
+
+    
+    <script src="app.js"></script>
+</body>
+
+</html>
