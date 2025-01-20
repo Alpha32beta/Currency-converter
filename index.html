@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exchange Rates</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
         <section id="Currency-exchange">
@@ -15,7 +17,12 @@
                 <label for="currency-pair"></label>
                 <input class="currency-pair"  list="currency-list" id="currency-pair" placeholder="search currency">
                 <datalist id="currency-list"></datalist>
-    
+
+                <div id="swap-container">
+                    <i class="fas fa-exchange-alt"></i> 
+                </div>
+
+                    
                 <label for="currency-pair2"></label>
                 <input class="currency-pair2" list="currency-list2" id="currency-pair2" placeholder="search currency">
                 <datalist id="currency-list2"></datalist>
@@ -25,9 +32,20 @@
 
         </section>
 
-        <div id="currency-rate">
-             
+        <div id="currency-rate"></div>
+        
+        <br>
+
+        <div id="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright">
+                <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+                <span class="blue-text">Track all markets on TradingView</span>
+                </a>
+            </div>
         </div>
+    
+        
         
 </body>
 
